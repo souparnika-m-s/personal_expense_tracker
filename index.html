@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Expense Tracker</title>
+</head>
+<body>
+
+    <div id="auth-section">
+        <h2>Login/ Signup</h2>
+        <input type="email" id="email" placeholder="Email"/>
+        <input type="password" id="password" placeholder="Password"/>
+        <button id="login-btn">Login</button>
+        <button id="signup-btn">Signup</button>
+        <button id="logout-btn">Logout</button>
+        <p id="user-information"></p>
+    </div>
+    </div>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        <form id="expense-form">
+            <input type="text" id="title" placeholder="Expense Title" required />
+            <input type="number" id="amount" placeholder="Amount" required />
+            <input type="date" id="date" required />
+            <select id="category" required>
+                <option value="" disabled selected>Category</option>
+                <option value="food">Food</option>
+                <option value="transport">Transport</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="utilities">Utilities</option>
+                <option value="health">Health</option>
+                <option value="other">Other</option>
+            </select>
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <div id="filters">
+            <label for="filter-category">Filter by category:</label>
+            <select id="filter-category">
+                <option value="all">All</option>
+                <option value="food">Food</option>
+                <option value="transport">Transport</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="filter-date">Filter by date:</label>
+            <input type="date" id="filter-date">
+        </div>
+        <ul id="expense-list"></ul>
+
+        <div id="expense-summary">
+            <h2>Expense Summary</h2>
+            <div id="total-expense-category">
+                <span>Food: 0.00</span>
+                <span>Transport: $0.00</span>
+                <span>Entertainment: $0.00</span>
+                <span>Utilities: $0.00</span>
+                <span>Health: $0.00</span>
+                <span>Other: $0.00</span>
+            </div>
+        <div id="total-expense">Total: $0.00</div>
+    </div>
+
+    <h3>Category Breakdown</h3>
+    <canvas id="category-chart" width="400" height="200"></canvas>
+
+    <h3>Monthly Breakdown</h3>
+    <canvas id="monthly-chart" width="400" height="200"></canvas>
+    <!-- Firebase App (core SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/11.8.1/firebase-app-compat.js"></script>
+    <!-- Firebase Auth -->
+    <script src="https://www.gstatic.com/firebasejs/11.8.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore-compat.js"></script>
+
+
+        <script type="module" src="script.js"></script>
+    
+</body>
+</html>
